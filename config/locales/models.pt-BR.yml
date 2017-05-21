@@ -1,0 +1,12 @@
+"pt-BR":
+  activerecord:
+    models:
+      contato:
+        one: Contato
+        other: Contatos
+      endereco:
+        one: Endereço
+        other: Endereços
+      tipo:
+        one: Tipo
+        other: Tipos

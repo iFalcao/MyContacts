@@ -1,0 +1,31 @@
+<div class="elegant-aero">
+  <script>
+    $.notify(" <%= notice %>", "success");
+  </script>
+
+  <h1><%= "#{t('messages.listing')} #{@tipos.model_name.human(count: @tipos.count)}" %> </h1>
+
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Descrição</th>
+        <th colspan="1"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tipos.each do |tipo| %>
+        <tr>
+          <td><%= tipo.descricao %></td>
+          <td><%= link_to 'Editar', edit_tipo_path(tipo), class: "btn btn-warning" %></td>
+          <td><%= link_to 'Apagar', tipo, class: "btn btn-danger", method: :delete, data: { confirm: t('messages.confirm') } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to t('back'), bemvindo_path, class: "btn btn-info" %>
+  <%= link_to t('add'), new_tipo_path, class: "btn btn-success" %>
+</div>

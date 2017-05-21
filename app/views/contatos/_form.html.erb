@@ -1,0 +1,55 @@
+<%= form_for(@contato, html: {class: "elegant-aero"}) do |f| %>
+  <h1><%= @contato.model_name.human %></h1>
+ <% if @contato.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contato.errors.count, "erro") %> proibiu esse contato de ser salvo:</h2>
+
+      <ul>
+      <% @contato.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+<% end %>
+
+  <div class="field">
+    <%= f.label :nome %>
+    <%= f.text_field :nome %>
+    <small class="form-text text-muted">Digite o nome completo.</small>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.fields_for :endereco do |campos_endereco| %>
+      Rua:<br> <%= campos_endereco.text_field :rua %><br>
+      Cidade:<br> <%= campos_endereco.text_field :cidade %><br>
+      Estado:<br> <%= campos_endereco.select :estado, options_for_states(@contato.endereco.estado) %><br>
+    <% end %>
+  </div>
+  <div id="telefones">
+    <%= f.fields_for :telefones do |campos_telefones| %>
+      <%= render partial: "telefone_fields", locals: { f: campos_telefones}%>
+    <% end %>
+    <%= f.label :telefones, "<span class='glyphicon glyphicon-phone-alt' aria-hidden='true'></span>".html_safe %>
+    <%= link_to_add_association('Adicionar Telefone:', f, :telefones) %><br>
+  </div>
+  <div class="field">
+    <br>
+    <%= f.label :tipo_id %>
+    <%= f.collection_select(:tipo_id, @opcoes_tipos_para_select, :id, :descricao) %>
+    <!-- Quem vai receber essa coleção, aonde vai receber, do quê?, campo que vai ser enviado, campo que será mostrado -->
+  </div>
+  <div class="field">
+    <label for="observacao">Observação:</label>
+    <%= f.text_area :observacao %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Enviar", class: "btn btn-success" %>
+    <%= link_to t('back'), :back, class: "btn btn-info" %>
+  </div>
+<% end %>
+
+
+

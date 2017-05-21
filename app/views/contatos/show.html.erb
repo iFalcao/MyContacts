@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+<div class="elegant-aero">
+  <p>
+    <strong>Nome:</strong>
+    <%= @contato.nome %>
+  </p>
+
+  <p>
+    <strong>E-mail:</strong>
+    <%= @contato.email %>
+  </p>
+
+  <p>
+    <strong>Tipo:</strong>
+    <%= @contato.tipo.descricao %>
+  </p>
+
+  <p>
+    <strong>Observação:</strong>
+    <%= @contato.observacao %>
+  </p>
+
+  <%= link_to t('edit'), edit_contato_path(@contato) %> |
+  <%= link_to t('back'), contatos_path %>
+</div>

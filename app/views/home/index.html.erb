@@ -1,0 +1,10 @@
+<div class="elegant-aero">
+  <h1>Seja Bem Vindo</h1>
+  <ul class="links-page-inicial">
+    <li>  <span class="glyphicon glyphicon-user" aria-hidden="true"></span> - <%= link_to "Contatos", contatos_path, class: "start-link" %> </li>
+    <li> <span class="glyphicon glyphicon-tag" aria-hidden="true"></span> - <%= link_to "Tipos", tipos_path, class: "start-link" %> </li>
+  </ul>
+
+  <% # REFERENCIAMOS O ARQUIVO A PARTIR DA PASTA views QUANDO ELE NÃO ESTÁ DISPOSTO AUTOMATICAMENTE %>
+  <%= render partial:"contatos/rodape" %>
+</div>
