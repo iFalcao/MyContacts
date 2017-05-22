@@ -1,28 +1,9 @@
-== README
+Welcome, this is my first application with Ruby on Rails just to get things going. It was developed in codeanywhere.com, you should check it out.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Using Ruby 2.1.2 with Rails 4.2.5
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to use the faker to generate the database
+~> rake db:create db:migrate db:seed utils:seed
+ # The utils:seed was created by me to help with the population of the database in the development phase
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
