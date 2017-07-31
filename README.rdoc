@@ -2,8 +2,5 @@ Welcome, this is my first application with Ruby on Rails just to get things goin
 
 * Using Ruby 2.1.2 with Rails 4.2.5
 
-* How to use the faker to generate the database
-~> rake db:create db:migrate db:seed utils:seed
- # The utils:seed was created by me to help with the population of the database in the development phase
-
-
+* How to use the faker gem to generate the database
+* `rake db:create db:migrate db:seed utils:seed`
